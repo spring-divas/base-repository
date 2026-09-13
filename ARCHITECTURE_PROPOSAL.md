@@ -53,13 +53,13 @@ Responsible for user authentication and identification.
 ### 2. Venue & Menu
 Responsible for venues, tables, QR codes, and restaurant menus.
 
-**Entities:** `Venue`, `Table`, `QrCode`, `Dish`, `Category`, `Ingredient`, `Allergen`
+**Entities:** `Venue`, `VenueTable`, `Dish`
 
 
 ### 3. Stock
 Responsible for ingredient availability. When an ingredient becomes unavailable, the context notifies **Venue & Menu** about the change.
 
-**Entities:** `IngredientStock`, `IngredientAvailability`
+**Entities:** `Ingredient`, `Allergen`
 
 
 ### 4. Order
@@ -74,9 +74,9 @@ Responsible for processing payments and managing their statuses. After a payment
 
 
 ### 6. Reviews
-Responsible for user reviews of dishes and restaurants, as well as issuing discount coupons after a review is submitted.
+Responsible for user reviews of dishes and restaurants.
 
-**Entities:** `Review`, `Coupon`
+**Entities:** `DishReview`, `VenueReview`
 
 
 ## 5. Context Map
