@@ -4,7 +4,7 @@
 
 **Restaurant Business**
 
-Inspired by [Expirenza](https://expz.monobank.ua)  by monobank.
+Inspired by [Expirenza](https://expz.monobank.ua) by monobank.
 
 ## 2. Key Business scenarios
 
@@ -36,48 +36,36 @@ Inspired by [Expirenza](https://expz.monobank.ua)  by monobank.
 
 1. **Identity Context**
 2. **Venue & Menu Context**
-3. **Stock Context**
-4. **Order Context**
-5. **Payment Context**
-6. **Reviews Context**
+3. **Order Context**
+4. **Payment Context**
+5. **Reviews Context**
 
 ## 4. Domain Isolation
-
 
 ### 1. Identity
 Responsible for user authentication and identification.
 
 **Entities:** `User`
 
-
 ### 2. Venue & Menu
-Responsible for venues, tables, QR codes, and restaurant menus.
+Responsible for venues, tables, QR codes, restaurant menus, and ingredient availability.
 
-**Entities:** `Venue`, `VenueTable`, `Dish`
+**Entities:** `Venue`, `VenueTable`, `Dish`, `Ingredient`, `Allergen`
 
-
-### 3. Stock
-Responsible for ingredient availability. When an ingredient becomes unavailable, the context notifies **Venue & Menu** about the change.
-
-**Entities:** `Ingredient`, `Allergen`
-
-
-### 4. Order
+### 3. Order
 Responsible for historical order information.
 
 **Entities:** `Order`, `OrderItem` (stores a snapshot of the `Dish` information at the time the order is placed, including its name and price)
 
-### 5. Payment
+### 4. Payment
 Responsible for processing payments and managing their statuses. After a payment is completed or fails, the context publishes the corresponding event.
 
 **Entities:** `Payment`
 
-
-### 6. Reviews
+### 5. Reviews
 Responsible for user reviews of dishes and restaurants.
 
 **Entities:** `DishReview`, `VenueReview`
 
-
 ## 5. Context Map
-![Context Map](img.png)
+![Context Map](architecture.png)
